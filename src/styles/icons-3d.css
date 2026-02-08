@@ -1,0 +1,311 @@
+/* 3D Neumorphic Icon System Styles */
+
+:root {
+  /* Icon gradient colors */
+  --icon-gradient-default-from: #6366f1;
+  --icon-gradient-default-to: #8b5cf6;
+  --icon-gradient-primary-from: #3b82f6;
+  --icon-gradient-primary-to: #2563eb;
+  --icon-gradient-success-from: #10b981;
+  --icon-gradient-success-to: #059669;
+  --icon-gradient-warning-from: #f59e0b;
+  --icon-gradient-warning-to: #d97706;
+  --icon-gradient-danger-from: #ef4444;
+  --icon-gradient-danger-to: #dc2626;
+  --icon-gradient-info-from: #06b6d4;
+  --icon-gradient-info-to: #0891b2;
+  
+  /* Glow colors */
+  --icon-glow-default: rgba(99, 102, 241, 0.5);
+  --icon-glow-primary: rgba(59, 130, 246, 0.5);
+  --icon-glow-success: rgba(16, 185, 129, 0.5);
+  --icon-glow-warning: rgba(245, 158, 11, 0.5);
+  --icon-glow-danger: rgba(239, 68, 68, 0.5);
+  --icon-glow-info: rgba(6, 182, 212, 0.5);
+  
+  /* Neumorphic shadows */
+  --neuro-shadow-light: -2px -2px 5px rgba(255, 255, 255, 0.05);
+  --neuro-shadow-dark: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  --neuro-shadow-inset-light: inset -1px -1px 2px rgba(255, 255, 255, 0.05);
+  --neuro-shadow-inset-dark: inset 2px 2px 4px rgba(0, 0, 0, 0.3);
+  
+  /* Icon sizes */
+  --icon-size-xs: 12px;
+  --icon-size-sm: 16px;
+  --icon-size-md: 20px;
+  --icon-size-lg: 24px;
+  --icon-size-xl: 32px;
+  --icon-size-2xl: 40px;
+  
+  /* Border radius for pill shapes */
+  --icon-radius-sm: 8px;
+  --icon-radius-md: 12px;
+  --icon-radius-lg: 16px;
+  --icon-radius-xl: 24px;
+  --icon-radius-full: 9999px;
+}
+
+/* Base 3D icon styles */
+.icon-3d {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) 
+          drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.icon-3d:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25)) 
+          drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
+}
+
+/* Icon glow effects */
+.icon-3d-glow {
+  position: relative;
+}
+
+.icon-3d-glow::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, currentColor 0%, transparent 70%);
+  opacity: 0.5;
+  filter: blur(8px);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.icon-3d-glow:hover::before {
+  opacity: 0.8;
+}
+
+/* Neumorphic button container */
+.icon-button-neuro {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  box-shadow: var(--neuro-shadow-dark), var(--neuro-shadow-light);
+  border-radius: var(--icon-radius-md);
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.icon-button-neuro:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.35),
+    -4px -4px 8px rgba(255, 255, 255, 0.07);
+}
+
+.icon-button-neuro:active {
+  transform: translateY(0);
+  box-shadow: 
+    var(--neuro-shadow-inset-dark),
+    var(--neuro-shadow-inset-light);
+}
+
+.icon-button-neuro.active {
+  box-shadow: 
+    var(--neuro-shadow-inset-dark),
+    var(--neuro-shadow-inset-light);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.05));
+}
+
+/* Pill-shaped icon container */
+.icon-pill-neuro {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--icon-radius-full);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  box-shadow: 
+    var(--neuro-shadow-dark),
+    var(--neuro-shadow-light),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.icon-pill-neuro:hover {
+  box-shadow: 
+    3px 3px 7px rgba(0, 0, 0, 0.35),
+    -3px -3px 7px rgba(255, 255, 255, 0.07),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.08);
+}
+
+/* Badge with icon */
+.icon-badge-neuro {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: var(--icon-radius-full);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  box-shadow: 
+    2px 2px 6px rgba(0, 0, 0, 0.3),
+    -2px -2px 6px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.icon-badge-neuro .badge-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  border-radius: var(--icon-radius-full);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient text for labels */
+.icon-gradient-text {
+  background: linear-gradient(145deg, var(--icon-gradient-default-from), var(--icon-gradient-default-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500;
+}
+
+/* Variant color classes */
+.icon-gradient-text.primary {
+  background: linear-gradient(145deg, var(--icon-gradient-primary-from), var(--icon-gradient-primary-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.icon-gradient-text.success {
+  background: linear-gradient(145deg, var(--icon-gradient-success-from), var(--icon-gradient-success-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.icon-gradient-text.warning {
+  background: linear-gradient(145deg, var(--icon-gradient-warning-from), var(--icon-gradient-warning-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.icon-gradient-text.danger {
+  background: linear-gradient(145deg, var(--icon-gradient-danger-from), var(--icon-gradient-danger-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.icon-gradient-text.info {
+  background: linear-gradient(145deg, var(--icon-gradient-info-from), var(--icon-gradient-info-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animations */
+@keyframes icon-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.icon-pulse {
+  animation: icon-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes icon-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.icon-bounce {
+  animation: icon-bounce 1s ease-in-out infinite;
+}
+
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-spin {
+  animation: icon-spin 1s linear infinite;
+}
+
+/* Floating icon effect */
+@keyframes icon-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.icon-float {
+  animation: icon-float 3s ease-in-out infinite;
+}
+
+/* Glow pulse animation */
+@keyframes icon-glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px currentColor);
+  }
+}
+
+.icon-glow-pulse {
+  animation: icon-glow-pulse 2s ease-in-out infinite;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .icon-button-neuro {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .icon-pill-neuro {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .icon-badge-neuro {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  }
+}
+
+/* Responsive icon sizes */
+@media (max-width: 640px) {
+  :root {
+    --icon-size-lg: 20px;
+    --icon-size-xl: 28px;
+    --icon-size-2xl: 36px;
+  }
+}

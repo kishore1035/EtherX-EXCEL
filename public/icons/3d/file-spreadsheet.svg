@@ -1,0 +1,47 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-file">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="gold-gradient-file" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#E6C45A;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#D4A849;stop-opacity:0.8" />
+    </linearGradient>
+    <radialGradient id="inner-glow-file">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Base circle - matte black -->
+  <circle cx="64" cy="64" r="56" fill="#1a1a1a" opacity="0.95"/>
+  <circle cx="64" cy="64" r="56" fill="url(#inner-glow-file)" opacity="0.4"/>
+  
+  <!-- Glass overlay -->
+  <circle cx="64" cy="64" r="56" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  
+  <!-- Spreadsheet file design -->
+  <g filter="url(#glow-file)">
+    <!-- Main document body -->
+    <path d="M 42 32 L 42 96 L 86 96 L 86 46 L 72 32 Z" fill="url(#gold-gradient-file)" opacity="0.9"/>
+    
+    <!-- Folded corner -->
+    <path d="M 72 32 L 72 46 L 86 46 Z" fill="url(#gold-gradient-file)" opacity="0.6"/>
+    
+    <!-- Grid lines (spreadsheet cells) -->
+    <line x1="42" y1="56" x2="86" y2="56" stroke="rgba(26,26,26,0.3)" stroke-width="2"/>
+    <line x1="42" y1="68" x2="86" y2="68" stroke="rgba(26,26,26,0.3)" stroke-width="2"/>
+    <line x1="42" y1="80" x2="86" y2="80" stroke="rgba(26,26,26,0.3)" stroke-width="2"/>
+    
+    <line x1="56" y1="48" x2="56" y2="96" stroke="rgba(26,26,26,0.3)" stroke-width="2"/>
+    <line x1="70" y1="48" x2="70" y2="96" stroke="rgba(26,26,26,0.3)" stroke-width="2"/>
+  </g>
+  
+  <!-- Subtle highlight for glass effect -->
+  <ellipse cx="64" cy="48" rx="35" ry="20" fill="rgba(255,255,255,0.05)"/>
+</svg>

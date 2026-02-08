@@ -1,0 +1,51 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-clock">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="gold-gradient-clock" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#E6C45A;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#D4A849;stop-opacity:0.8" />
+    </linearGradient>
+    <radialGradient id="inner-glow-clock">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Base circle - matte black -->
+  <circle cx="64" cy="64" r="56" fill="#1a1a1a" opacity="0.95"/>
+  <circle cx="64" cy="64" r="56" fill="url(#inner-glow-clock)" opacity="0.4"/>
+  
+  <!-- Glass overlay -->
+  <circle cx="64" cy="64" r="56" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  
+  <!-- Clock face and hands -->
+  <g filter="url(#glow-clock)">
+    <!-- Outer ring -->
+    <circle cx="64" cy="64" r="36" fill="none" stroke="url(#gold-gradient-clock)" stroke-width="4"/>
+    
+    <!-- Hour markers -->
+    <circle cx="64" cy="36" r="2.5" fill="url(#gold-gradient-clock)"/>
+    <circle cx="92" cy="64" r="2.5" fill="url(#gold-gradient-clock)"/>
+    <circle cx="64" cy="92" r="2.5" fill="url(#gold-gradient-clock)"/>
+    <circle cx="36" cy="64" r="2.5" fill="url(#gold-gradient-clock)"/>
+    
+    <!-- Hour hand (pointing to 10) -->
+    <rect x="61" y="52" width="6" height="18" rx="3" fill="url(#gold-gradient-clock)"/>
+    
+    <!-- Minute hand (pointing to 2) -->
+    <rect x="64" y="46" width="4" height="24" rx="2" fill="url(#gold-gradient-clock)" transform="rotate(60 64 64)"/>
+    
+    <!-- Center dot -->
+    <circle cx="64" cy="64" r="4" fill="url(#gold-gradient-clock)"/>
+  </g>
+  
+  <!-- Subtle highlight for glass effect -->
+  <ellipse cx="64" cy="48" rx="35" ry="20" fill="rgba(255,255,255,0.05)"/>
+</svg>

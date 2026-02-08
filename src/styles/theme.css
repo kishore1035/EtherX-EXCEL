@@ -1,0 +1,103 @@
+/* CLEAN THEME SYSTEM - MANDATORY TOKENS ONLY */
+:root {
+  /* Light Mode (UNCHANGED) */
+  --bg-main: #FFFFFF;
+  --bg-card: #FFF9E8;
+  --text-primary: #000000;
+  --text-secondary: #444444;
+  --accent-yellow: #F0A500;
+  --border-color: rgba(240,165,0,0.18);
+}
+
+.dark, [data-theme="dark"] {
+  /* Dark Mode (EXACT INVERSION) */
+  --bg-main: #0B0B0B;
+  --bg-card: #151515;
+  --text-primary: #FFFFFF;
+  --text-secondary: #FFFFFF;
+  --accent-yellow: #F0A500; /* SAME AS LIGHT */
+  --border-color: rgba(240,165,0,0.12);
+}
+
+/* GLOBAL BASE STYLES */
+html, body, #root {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* UNIVERSAL TEXT VISIBILITY IN DARK MODE */
+.dark *, [data-theme="dark"] * {
+  color: var(--text-primary);
+}
+
+/* CARD COMPONENTS */
+.card, .panel, .sidebar, .template, .container {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* SEARCH BAR PLACEHOLDER FIX */
+.dark input::placeholder, [data-theme="dark"] input::placeholder {
+  color: var(--text-primary);
+  opacity: 0.8;
+}
+
+/* SCROLLBARS ADAPT TO THEME */
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-card);
+  border-radius: 4px;
+  transition: background 0.25s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-yellow);
+}
+
+/* DIVIDERS ADAPT TO THEME */
+hr, .divider, .scroll-line {
+  border-color: var(--border-color);
+  transition: border-color 0.25s ease;
+}
+
+/* SMOOTH TRANSITIONS FOR ALL ELEMENTS */
+* {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* SPREADSHEET CELLS ALWAYS BLACK TEXT ON WHITE */
+table.border-collapse td input,
+table.border-collapse td div,
+table.border-collapse td span,
+table.border-collapse td {
+  color: #000000 !important;
+}
+
+table.border-collapse {
+  background-color: #ffffff !important;
+}
+
+/* Ribbon button subtle gold glow (applies across tabs) */
+.ribbon-tabs button {
+  transition: background-color 150ms ease, box-shadow 180ms ease !important;
+}
+
+.ribbon-tabs button:hover:not(:disabled) {
+  box-shadow: 0 6px 18px rgba(240,165,0,0.10) !important;
+}
+
+.ribbon-tabs button:active,
+.ribbon-tabs button.bg-yellow-400,
+.ribbon-tabs button[style*="background: rgb(250, 204, 21)"] {
+  box-shadow: 0 8px 26px rgba(240,165,0,0.16) !important;
+}
+
+/* Make border-color variable drive thin separators and hr */
+hr, .divider, .scroll-line {
+  border-color: var(--border-color) !important;
+}

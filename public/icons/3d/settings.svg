@@ -1,0 +1,35 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-settings">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="gold-gradient-settings" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#E6C45A;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#D4A849;stop-opacity:0.8" />
+    </linearGradient>
+    <radialGradient id="inner-glow-settings">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <circle cx="64" cy="64" r="56" fill="#1a1a1a" opacity="0.95"/>
+  <circle cx="64" cy="64" r="56" fill="url(#inner-glow-settings)" opacity="0.4"/>
+  <circle cx="64" cy="64" r="56" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  
+  <g filter="url(#glow-settings)">
+    <!-- Gear teeth -->
+    <path d="M 64 32 L 68 40 L 76 40 L 80 32 L 88 36 L 88 44 L 96 48 L 96 56 L 88 60 L 88 68 L 96 72 L 96 80 L 88 84 L 88 92 L 80 96 L 76 88 L 68 88 L 64 96 L 56 96 L 52 88 L 44 88 L 40 96 L 32 92 L 32 84 L 24 80 L 24 72 L 32 68 L 32 60 L 24 56 L 24 48 L 32 44 L 32 36 L 40 32 L 44 40 L 52 40 Z" fill="url(#gold-gradient-settings)"/>
+    
+    <!-- Center circle -->
+    <circle cx="64" cy="64" r="16" fill="#1a1a1a" opacity="0.8"/>
+    <circle cx="64" cy="64" r="16" fill="none" stroke="url(#gold-gradient-settings)" stroke-width="3"/>
+  </g>
+  
+  <ellipse cx="64" cy="48" rx="35" ry="20" fill="rgba(255,255,255,0.05)"/>
+</svg>

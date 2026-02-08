@@ -1,0 +1,278 @@
+/* 3D Icon Enhancements for Spreadsheet Components */
+/* This stylesheet upgrades all icons to match the Dashboard's 3D aesthetic */
+
+/* Global Icon Styling - Subtle 3D Effect */
+.lucide, svg.lucide {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15)) 
+          drop-shadow(0 0.5px 1px rgba(255, 255, 255, 0.1));
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ribbon Tab Buttons - Enhanced with Gradients */
+button:has(> .lucide), 
+button:has(> svg.lucide),
+.ribbon-button {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+button:hover > .lucide,
+button:hover > svg.lucide {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) 
+          drop-shadow(0 0 3px rgba(255, 207, 64, 0.3))
+          drop-shadow(0 0.5px 1px rgba(255, 255, 255, 0.2));
+  transform: translateY(-1px);
+}
+
+button:active > .lucide,
+button:active > svg.lucide {
+  filter: drop-shadow(0 0.5px 1px rgba(0, 0, 0, 0.2));
+  transform: translateY(0);
+}
+
+/* Primary Action Icons - Golden Glow */
+button[data-variant="primary"] .lucide,
+button.bg-yellow-400 .lucide,
+button[style*="yellow"] .lucide,
+button[style*="gold"] .lucide,
+button[style*="FFCF40"] .lucide,
+button[style*="FFD700"] .lucide {
+  filter: drop-shadow(0 2px 3px rgba(255, 207, 64, 0.4)) 
+          drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2))
+          drop-shadow(0 0 4px rgba(255, 215, 0, 0.2));
+}
+
+button[data-variant="primary"]:hover .lucide,
+button.bg-yellow-400:hover .lucide {
+  filter: drop-shadow(0 3px 6px rgba(255, 207, 64, 0.5)) 
+          drop-shadow(0 0 8px rgba(255, 215, 0, 0.3))
+          drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Icon Color Gradients - Apply subtle gradients to icon strokes */
+.lucide-bold,
+.lucide-italic,
+.lucide-underline {
+  stroke: url(#icon-gradient-text);
+}
+
+.lucide-copy,
+.lucide-clipboard,
+.lucide-scissors,
+.lucide-clipboard-paste {
+  stroke: url(#icon-gradient-clipboard);
+}
+
+.lucide-align-left,
+.lucide-align-center,
+.lucide-align-right {
+  stroke: url(#icon-gradient-align);
+}
+
+.lucide-upload,
+.lucide-download {
+  stroke: url(#icon-gradient-import);
+}
+
+.lucide-trash-2,
+.lucide-x {
+  stroke: url(#icon-gradient-danger);
+}
+
+.lucide-check,
+.lucide-checkmark {
+  stroke: url(#icon-gradient-success);
+}
+
+.lucide-sparkles,
+.lucide-help-circle,
+.lucide-info {
+  stroke: url(#icon-gradient-info);
+}
+
+/* Button Container Enhancements */
+.ribbon-button,
+button[class*="flex-col"] {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  box-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.1),
+    -1px -1px 2px rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.ribbon-button:hover,
+button[class*="flex-col"]:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  box-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.15),
+    -1px -1px 3px rgba(255, 255, 255, 0.03),
+    inset 0 0 8px rgba(255, 207, 64, 0.05);
+  transform: translateY(-1px);
+}
+
+.ribbon-button:active,
+button[class*="flex-col"]:active {
+  box-shadow: 
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.02);
+  transform: translateY(0);
+}
+
+/* Disabled State */
+button:disabled .lucide,
+button[disabled] .lucide {
+  opacity: 0.4;
+  filter: grayscale(50%) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+/* Sheet Tab Icons */
+.sheet-tabs-bar .lucide {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+.sheet-tabs-bar button:hover .lucide {
+  filter: drop-shadow(0 2px 3px rgba(255, 207, 64, 0.3));
+}
+
+/* Formula Bar Icons */
+.formula-bar .lucide {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1))
+          drop-shadow(0 0 2px rgba(255, 207, 64, 0.1));
+}
+
+/* Header Icons - More Prominent */
+header .lucide,
+.header-icon-button .lucide {
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2))
+          drop-shadow(0 0 4px rgba(255, 207, 64, 0.15));
+}
+
+header button:hover .lucide,
+.header-icon-button:hover .lucide {
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.25))
+          drop-shadow(0 0 8px rgba(255, 207, 64, 0.3));
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* Icon Size Specific Enhancements */
+.w-3.h-3 svg, .lucide.w-3.h-3 { 
+  filter: drop-shadow(0 0.5px 1px rgba(0, 0, 0, 0.12));
+}
+.w-4.h-4 svg, .lucide.w-4.h-4 { 
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.14));
+}
+.w-5.h-5 svg, .lucide.w-5.h-5 { 
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+.w-6.h-6 svg, .lucide.w-6.h-6 { 
+  filter: drop-shadow(0 1.5px 2.5px rgba(0, 0, 0, 0.16));
+}
+.w-8.h-8 svg, .lucide.w-8.h-8 { 
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.18));
+}
+
+/* Subtle Golden Accent on Active States */
+button[aria-pressed="true"] .lucide,
+button.active .lucide {
+  filter: drop-shadow(0 2px 4px rgba(255, 207, 64, 0.4))
+          drop-shadow(0 0 6px rgba(255, 215, 0, 0.25));
+}
+
+/* Gradient Definitions (Inline SVG) */
+.icon-gradients {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Responsive Glow - Subtle on Small Screens */
+@media (max-width: 768px) {
+  .lucide, svg.lucide {
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+  }
+  
+  button:hover > .lucide {
+    filter: drop-shadow(0 1px 2px rgba(255, 207, 64, 0.2));
+  }
+}
+
+/* Dark Mode Adjustments */
+.dark .lucide,
+.dark svg.lucide {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3))
+          drop-shadow(0 0.5px 1px rgba(255, 255, 255, 0.05));
+}
+
+.dark button:hover > .lucide {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))
+          drop-shadow(0 0 4px rgba(255, 207, 64, 0.25));
+}
+
+/* Special Icon Treatments */
+.icon-pulse {
+  animation: icon-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes icon-pulse {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 2px 3px rgba(255, 207, 64, 0.3));
+  }
+  50% {
+    opacity: 0.8;
+    filter: drop-shadow(0 3px 6px rgba(255, 207, 64, 0.5));
+  }
+}
+
+.icon-bounce {
+  animation: icon-bounce 1s ease-in-out infinite;
+}
+
+@keyframes icon-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Icon Container with Background Gradients */
+.icon-container-3d {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 207, 64, 0.08) 0%,
+    rgba(59, 130, 246, 0.08) 100%
+  );
+  border: 1px solid rgba(255, 207, 64, 0.15);
+  box-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.1),
+    -1px -1px 3px rgba(255, 255, 255, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.icon-container-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    3px 3px 8px rgba(0, 0, 0, 0.15),
+    -2px -2px 4px rgba(255, 255, 255, 0.03),
+    inset 0 2px 0 rgba(255, 255, 255, 0.08),
+    0 0 12px rgba(255, 207, 64, 0.2);
+}

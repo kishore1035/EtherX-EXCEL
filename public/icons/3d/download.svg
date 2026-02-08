@@ -1,0 +1,37 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-download">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="gold-gradient-download" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#E6C45A;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#D4A849;stop-opacity:0.8" />
+    </linearGradient>
+    <radialGradient id="inner-glow-download">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <circle cx="64" cy="64" r="56" fill="#1a1a1a" opacity="0.95"/>
+  <circle cx="64" cy="64" r="56" fill="url(#inner-glow-download)" opacity="0.4"/>
+  <circle cx="64" cy="64" r="56" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  
+  <g filter="url(#glow-download)">
+    <!-- Arrow shaft -->
+    <rect x="58" y="32" width="12" height="42" rx="6" fill="url(#gold-gradient-download)"/>
+    
+    <!-- Arrow head pointing down -->
+    <path d="M 64 86 L 46 68 L 56 68 L 56 62 L 72 62 L 72 68 L 82 68 Z" fill="url(#gold-gradient-download)"/>
+    
+    <!-- Base platform -->
+    <rect x="40" y="88" width="48" height="8" rx="4" fill="url(#gold-gradient-download)" opacity="0.8"/>
+  </g>
+  
+  <ellipse cx="64" cy="48" rx="35" ry="20" fill="rgba(255,255,255,0.05)"/>
+</svg>

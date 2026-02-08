@@ -1,0 +1,50 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-eye">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="gold-gradient-eye" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#E6C45A;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#D4A849;stop-opacity:0.8" />
+    </linearGradient>
+    <radialGradient id="inner-glow-eye">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Base circle - matte black -->
+  <circle cx="64" cy="64" r="56" fill="#1a1a1a" opacity="0.95"/>
+  <circle cx="64" cy="64" r="56" fill="url(#inner-glow-eye)" opacity="0.4"/>
+  
+  <!-- Glass overlay -->
+  <circle cx="64" cy="64" r="56" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  
+  <!-- Eye shape -->
+  <g filter="url(#glow-eye)">
+    <!-- Eye outline (almond shape) -->
+    <path d="M 36 64 Q 44 52 64 52 Q 84 52 92 64 Q 84 76 64 76 Q 44 76 36 64 Z" 
+          fill="none" 
+          stroke="url(#gold-gradient-eye)" 
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+    
+    <!-- Iris -->
+    <circle cx="64" cy="64" r="8" fill="url(#gold-gradient-eye)" opacity="0.8"/>
+    
+    <!-- Pupil -->
+    <circle cx="64" cy="64" r="4" fill="#1a1a1a" opacity="0.7"/>
+    
+    <!-- Light reflection -->
+    <circle cx="66" cy="62" r="2" fill="rgba(255,255,255,0.6)"/>
+  </g>
+  
+  <!-- Subtle highlight for glass effect -->
+  <ellipse cx="64" cy="48" rx="35" ry="20" fill="rgba(255,255,255,0.05)"/>
+</svg>

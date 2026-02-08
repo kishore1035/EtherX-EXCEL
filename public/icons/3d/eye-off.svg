@@ -1,0 +1,51 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-eye-off">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="gold-gradient-eye-off" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#E6C45A;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#D4A849;stop-opacity:0.8" />
+    </linearGradient>
+    <radialGradient id="inner-glow-eye-off">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Base circle - matte black -->
+  <circle cx="64" cy="64" r="56" fill="#1a1a1a" opacity="0.95"/>
+  <circle cx="64" cy="64" r="56" fill="url(#inner-glow-eye-off)" opacity="0.4"/>
+  
+  <!-- Glass overlay -->
+  <circle cx="64" cy="64" r="56" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  
+  <!-- Eye shape with slash -->
+  <g filter="url(#glow-eye-off)">
+    <!-- Eye outline (almond shape) -->
+    <path d="M 36 64 Q 44 52 64 52 Q 84 52 92 64 Q 84 76 64 76 Q 44 76 36 64 Z" 
+          fill="none" 
+          stroke="url(#gold-gradient-eye-off)" 
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.6"/>
+    
+    <!-- Iris (dimmed) -->
+    <circle cx="64" cy="64" r="8" fill="url(#gold-gradient-eye-off)" opacity="0.4"/>
+    
+    <!-- Diagonal slash line -->
+    <line x1="40" y1="80" x2="88" y2="48" 
+          stroke="url(#gold-gradient-eye-off)" 
+          stroke-width="3.5"
+          stroke-linecap="round"/>
+  </g>
+  
+  <!-- Subtle highlight for glass effect -->
+  <ellipse cx="64" cy="48" rx="35" ry="20" fill="rgba(255,255,255,0.05)"/>
+</svg>

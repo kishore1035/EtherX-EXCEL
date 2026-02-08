@@ -1,0 +1,46 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-trash">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="gold-gradient-trash" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#E6C45A;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#D4A849;stop-opacity:0.8" />
+    </linearGradient>
+    <radialGradient id="inner-glow-trash">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Base circle - matte black -->
+  <circle cx="64" cy="64" r="56" fill="#1a1a1a" opacity="0.95"/>
+  <circle cx="64" cy="64" r="56" fill="url(#inner-glow-trash)" opacity="0.4"/>
+  
+  <!-- Glass overlay -->
+  <circle cx="64" cy="64" r="56" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  
+  <!-- Trash can design -->
+  <g filter="url(#glow-trash)">
+    <!-- Lid handle -->
+    <path d="M 48 40 L 48 36 C 48 33 50 31 53 31 L 75 31 C 78 31 80 33 80 36 L 80 40 Z" fill="url(#gold-gradient-trash)"/>
+    
+    <!-- Lid top -->
+    <rect x="40" y="40" width="48" height="6" rx="3" fill="url(#gold-gradient-trash)"/>
+    
+    <!-- Trash body -->
+    <path d="M 44 50 L 48 92 C 48 94 50 96 52 96 L 76 96 C 78 96 80 94 80 92 L 84 50 Z" fill="url(#gold-gradient-trash)" opacity="0.9"/>
+    
+    <!-- Vertical lines on body -->
+    <rect x="56" y="56" width="3" height="32" rx="1.5" fill="rgba(26,26,26,0.3)"/>
+    <rect x="68" y="56" width="3" height="32" rx="1.5" fill="rgba(26,26,26,0.3)"/>
+  </g>
+  
+  <!-- Subtle highlight for glass effect -->
+  <ellipse cx="64" cy="48" rx="35" ry="20" fill="rgba(255,255,255,0.05)"/>
+</svg>

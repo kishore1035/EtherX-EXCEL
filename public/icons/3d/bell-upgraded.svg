@@ -1,0 +1,118 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-bell-upgraded">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="inner-shadow-bell">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="gold-gradient-bell-upgraded" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#F0C850;stop-opacity:0.95" />
+      <stop offset="70%" style="stop-color:#E6BA45;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#D4A849;stop-opacity:0.85" />
+    </linearGradient>
+    <linearGradient id="shine-gradient-bell" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0" />
+    </linearGradient>
+    <radialGradient id="inner-glow-bell-upgraded">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:0.4" />
+      <stop offset="60%" style="stop-color:#E6C45A;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="bg-glow-bell">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#2a2015;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:0.95" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background with subtle glow -->
+  <circle cx="64" cy="64" r="58" fill="url(#bg-glow-bell)"/>
+  <circle cx="64" cy="64" r="58" fill="url(#inner-glow-bell-upgraded)" opacity="0.5"/>
+  
+  <!-- Outer ring glow -->
+  <circle cx="64" cy="64" r="58" fill="none" stroke="rgba(255,215,120,0.15)" stroke-width="2"/>
+  <circle cx="64" cy="64" r="56" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  
+  <g filter="url(#glow-bell-upgraded)">
+    <!-- Bell main body with enhanced gradient -->
+    <path d="M 64 34 C 55 34 48 41 48 50 L 48 68 C 48 72 46 76 42 78 L 42 82 C 42 83 43 84 44 84 L 84 84 C 85 84 86 83 86 82 L 86 78 C 82 76 80 72 80 68 L 80 50 C 80 41 73 34 64 34 Z" 
+          fill="url(#gold-gradient-bell-upgraded)" 
+          filter="url(#inner-shadow-bell)"/>
+    
+    <!-- Bell rim highlight -->
+    <path d="M 42 78 L 86 78 L 86 82 C 86 83 85 84 84 84 L 44 84 C 43 84 42 83 42 82 Z" 
+          fill="url(#gold-gradient-bell-upgraded)" 
+          opacity="0.9"/>
+    
+    <!-- Bell clapper with shadow -->
+    <ellipse cx="64" cy="88" rx="7" ry="9" fill="url(#gold-gradient-bell-upgraded)" opacity="0.85"/>
+    <ellipse cx="64" cy="86" rx="5" ry="6" fill="url(#gold-gradient-bell-upgraded)"/>
+    
+    <!-- Top handle with enhanced styling -->
+    <path d="M 56 34 C 56 30.5 59.5 28 64 28 C 68.5 28 72 30.5 72 34" 
+          fill="none" 
+          stroke="url(#gold-gradient-bell-upgraded)" 
+          stroke-width="4" 
+          stroke-linecap="round"/>
+    
+    <!-- Inner handle glow -->
+    <path d="M 58 34 C 58 31.5 60.5 30 64 30 C 67.5 30 70 31.5 70 34" 
+          fill="none" 
+          stroke="rgba(255,255,255,0.3)" 
+          stroke-width="2" 
+          stroke-linecap="round"/>
+    
+    <!-- Shine effect on bell body -->
+    <ellipse cx="58" cy="52" rx="12" ry="20" fill="url(#shine-gradient-bell)" opacity="0.4"/>
+    <ellipse cx="62" cy="50" rx="8" ry="14" fill="url(#shine-gradient-bell)" opacity="0.3"/>
+    
+    <!-- Left side highlight -->
+    <path d="M 48 50 L 48 68 C 48 70 47 72 45 74 L 48 74 C 50 72 52 70 52 68 L 52 50 C 52 46 54 42 58 40 C 54 42 48 45 48 50 Z" 
+          fill="rgba(255,255,255,0.08)"/>
+    
+    <!-- Sound waves (notification indicator) -->
+    <path d="M 85 54 Q 90 54 90 60 Q 90 66 85 66" 
+          fill="none" 
+          stroke="url(#gold-gradient-bell-upgraded)" 
+          stroke-width="2.5" 
+          stroke-linecap="round"
+          opacity="0.7"/>
+    <path d="M 88 50 Q 95 50 95 60 Q 95 70 88 70" 
+          fill="none" 
+          stroke="url(#gold-gradient-bell-upgraded)" 
+          stroke-width="2" 
+          stroke-linecap="round"
+          opacity="0.5"/>
+    <path d="M 43 54 Q 38 54 38 60 Q 38 66 43 66" 
+          fill="none" 
+          stroke="url(#gold-gradient-bell-upgraded)" 
+          stroke-width="2.5" 
+          stroke-linecap="round"
+          opacity="0.7"/>
+    <path d="M 40 50 Q 33 50 33 60 Q 33 70 40 70" 
+          fill="none" 
+          stroke="url(#gold-gradient-bell-upgraded)" 
+          stroke-width="2" 
+          stroke-linecap="round"
+          opacity="0.5"/>
+  </g>
+  
+  <!-- Outer glow effect -->
+  <circle cx="64" cy="64" r="60" fill="none" stroke="rgba(255,215,120,0.1)" stroke-width="3" opacity="0.6"/>
+</svg>

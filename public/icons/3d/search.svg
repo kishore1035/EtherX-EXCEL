@@ -1,0 +1,49 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Filters for glow and depth -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Gold gradient for the search glass -->
+    <radialGradient id="goldGradient" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#FFD778;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E6C45A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D4A849;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Gradient for base circle -->
+    <radialGradient id="baseGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </radialGradient>
+
+    <!-- Inner glow gradient -->
+    <radialGradient id="innerGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#E6C45A;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#D4A849;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Base dark circle -->
+  <circle cx="64" cy="64" r="56" fill="url(#baseGradient)"/>
+  
+  <!-- Inner glow effect -->
+  <circle cx="64" cy="64" r="50" fill="url(#innerGlow)"/>
+  
+  <!-- Glass stroke overlay -->
+  <circle cx="64" cy="64" r="54" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="2"/>
+  
+  <!-- Magnifying glass circle -->
+  <circle cx="56" cy="56" r="18" fill="none" stroke="url(#goldGradient)" stroke-width="6" filter="url(#glow)"/>
+  
+  <!-- Magnifying glass handle -->
+  <line x1="68" y1="68" x2="82" y2="82" stroke="url(#goldGradient)" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+  
+  <!-- Highlight on glass -->
+  <ellipse cx="50" cy="50" rx="6" ry="8" fill="rgba(255, 255, 255, 0.3)" opacity="0.6"/>
+</svg>
